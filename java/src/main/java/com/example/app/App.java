@@ -6,6 +6,8 @@ public class App {
     public static void main(String[] args) throws Exception {
         ServerApp.startApp();
 
+        String a = "ad";
+
         Flyway flyway = Flyway.configure()
                 .dataSource("jdbc:postgresql://localhost:5432/postgres",
                         "postgres", "password")
