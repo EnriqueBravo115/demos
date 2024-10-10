@@ -1,11 +1,11 @@
 export const proto = {
-  sender: 'luis@gmail.com',
+  sender: "luis@gmail.com",
 };
 
 // Prototype Object
 export const transaction = {
-  sender: 'luis@joj.com',
-  recipient: 'luke@joj.com',
+  sender: "luis@joj.com",
+  recipient: "luke@joj.com",
 };
 
 // create con dos parametros, objeto de PropertyDescriptor

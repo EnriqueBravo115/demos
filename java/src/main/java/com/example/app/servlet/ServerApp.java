@@ -1,10 +1,9 @@
-package com.example.app;
+package com.example.app.servlet;
 
 import org.eclipse.jetty.ee10.servlet.ServletContextHandler;
 import org.eclipse.jetty.ee10.servlet.ServletHolder;
 import org.eclipse.jetty.server.Server;
-
-import com.example.app.servlet.HelloServlet;
+import org.flywaydb.core.Flyway;
 
 public class ServerApp {
     public static void startApp() throws Exception {
@@ -17,5 +16,13 @@ public class ServerApp {
         context.addServlet(new ServletHolder(new HelloServlet()), "/hello");
 
         server.start();
+
+        Flyway flyway = Flyway.configure()
+                .dataSource("jdbc:postgresql://localhost:5432/postgres",
+                        "postgres", "password")
+                .locations("classpath:db/migration/")
+                .load();
+
+        flyway.migrate();
     }
 }
