@@ -11,6 +11,7 @@ public class SelectionSort {
                     min = j;
                 }
             }
+
             int temp = A[i];
             A[i] = A[min];
             A[min] = temp;
